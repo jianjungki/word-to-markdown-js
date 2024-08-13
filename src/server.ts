@@ -16,8 +16,8 @@ app.use(helmet());
 app.post(
   '/raw',
   upload.single('doc'),
-  async (req: Request & { file: multer.File }, res) => {
-    if (!(req.file instanceof multer.File)) {
+  async (req: Request & { file: Express.Multer.File }, res) => {
+    if (!(req.file)) {
       res.status(400).send('You must upload a document to convert.');
       return;
     }
