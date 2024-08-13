@@ -13,4 +13,4 @@ RUN npm install
 
 COPY build /app/build/
 
-CMD ["node", "build/src/server.js"]
+CMD ["npm", "run", "server"]
