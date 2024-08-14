@@ -11,7 +11,9 @@ const upload = multer({ dest: os.tmpdir() });
 app.use(morgan('combined'));
 app.use(helmet());
 app.post('/raw', upload.single('doc'), (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    if (!(req.file instanceof multer.File)) {
+    console.log(req);
+    if (!(req.file)) {
+        console.log(req.file);
         res.status(400).send('You must upload a document to convert.');
         return;
     }
